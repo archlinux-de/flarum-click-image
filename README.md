@@ -1,8 +1,10 @@
-# Click-image
+# Click-Image
 
-![License](https://img.shields.io/badge/license-GPL-3.0-or-later-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/archlinux-de/click-image.svg)](https://packagist.org/packages/archlinux-de/click-image) [![Total Downloads](https://img.shields.io/packagist/dt/archlinux-de/click-image.svg)](https://packagist.org/packages/archlinux-de/click-image)
+A [Flarum](http://flarum.org) extension. Load images on click.
 
-A [Flarum](http://flarum.org) extension. Loads images on click
+When this extension is enabled, all user provided images within the ``[IMG]...[/IMG]`` code tag will be replaced by a
+placeholder. The actual image is only loaded when that placeholder is clicked. This ensures that no third party content
+is loaded without user permissions.
 
 ## Installation
 
@@ -16,12 +18,10 @@ composer require archlinux-de/click-image:"*"
 
 ```sh
 composer update archlinux-de/click-image:"*"
-php flarum migrate
 php flarum cache:clear
 ```
 
 ## Links
 
-- [Packagist](https://packagist.org/packages/archlinux-de/click-image)
-- [GitHub](https://github.com/archlinux-de/click-image)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [Packagist](https://packagist.org/packages/archlinux-de/flarum-click-image)
+- [GitHub](https://github.com/archlinux-de/flarum-click-image)
