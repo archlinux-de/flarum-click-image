@@ -1,5 +1,5 @@
 {
-    "name": "@archlinux-de/click-image",
+    "name": "@archlinux-de/flarum-click-image",
     "private": true,
     "devDependencies": {
         "flarum-webpack-config": "^2.0.0",

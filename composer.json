@@ -1,29 +1,18 @@
 {
-    "name": "archlinux-de/click-image",
-    "description": "Loads images on click",
-    "keywords": [
-        "flarum"
-    ],
+    "name": "archlinux-de/flarum-click-image",
+    "description": "Load images on click",
     "type": "flarum-extension",
     "license": "GPL-3.0-or-later",
     "require": {
         "flarum/core": "^1.0.0"
     },
-    "authors": [
-        {
-            "name": "Pierre Schmitz",
-            "email": "pierre@archlinux.de",
-            "role": "Developer"
-        }
-    ],
     "extra": {
         "flarum-extension": {
-            "title": "Click-image",
-            "category": "",
+            "title": "Click-Image",
             "icon": {
-                "name": "",
-                "color": "",
-                "backgroundColor": ""
+                "name": "fas fa-image",
+                "backgroundColor": "#08c",
+                "color": "#fff"
             }
         },
         "flarum-cli": {
