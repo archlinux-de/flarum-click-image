@@ -38,7 +38,7 @@
                 "githubActions": true,
                 "prettier": true,
                 "typescript": false,
-                "bundlewatch": true,
+                "bundlewatch": false,
                 "backendTesting": false,
                 "editorConfig": true,
                 "styleci": true
