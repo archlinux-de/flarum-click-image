@@ -26,7 +26,7 @@ export default class ClickImage extends HTMLElement {
             placeHolder.style.width = `min(${img.width}px, 100%)`;
             placeHolder.style.height = 'auto';
             placeHolder.style.aspectRatio = `${img.width} / ${img.height}`;
-            setTimeout(() => placeHolder.replaceWith(img), 200);
+            setTimeout(() => this.replaceWith(img), 200);
           };
         },
         { once: true }
@@ -42,8 +42,12 @@ export default class ClickImage extends HTMLElement {
   _createPlaceholder(hostname) {
     const div = document.createElement('div');
     div.innerHTML = `
-        <span class="placeholder-message">${app.translator.trans('archlinux-de-flarum-click-image.forum.load_button', { domain: hostname }).join('')}</span>
-        <span class="error-message">${app.translator.trans('archlinux-de-flarum-click-image.forum.error_message', { domain: hostname }).join('')}</span>
+        <span class="placeholder-message">${app.translator
+          .trans('archlinux-de-flarum-click-image.forum.load_button', { domain: hostname })
+          .join('')}</span>
+        <span class="error-message">${app.translator
+          .trans('archlinux-de-flarum-click-image.forum.error_message', { domain: hostname })
+          .join('')}</span>
       `;
     return div;
   }
@@ -51,28 +55,30 @@ export default class ClickImage extends HTMLElement {
   _createStyle() {
     const style = document.createElement('style');
     style.innerHTML = `
+        :host {
+          --background-color: #ccc;
+          --border-color: #ddd;
+          --color: #333;
+          --error-color: #f00;
+        }
         div {
           padding: 8px;
           box-sizing: border-box;
-          border: 1px solid #fff;
+          border: 1px solid var(--border-color);
           height: 150px;
           width: 100%;
           max-width: 100%;
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          background-color: #ededed;
+          background-color: var(--background-color);
           cursor: pointer;
           transition: width .2s ease-in-out, height .2s ease-in-out;
-        }
-        img {
-          vertical-align: middle;
-          max-width: 100%;
         }
         span {
           font-family: sans-serif;
           font-size: 14px;
-          color: #808080;
+          color: var(--color);
         }
         a {
           color: unset;
@@ -99,7 +105,7 @@ export default class ClickImage extends HTMLElement {
           cursor: unset;
         }
         .error span {
-          color: #B72A2A;
+          color: var(--error-color);
         }
       `;
 
