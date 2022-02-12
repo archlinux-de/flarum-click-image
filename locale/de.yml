@@ -1,0 +1,4 @@
+archlinux-de-click-image:
+  forum:
+    load: 'Bild von {domain} laden'
+    error: 'Bild konnte nicht von {domain} geladen werden'
