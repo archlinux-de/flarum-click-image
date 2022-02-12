@@ -1,4 +1,4 @@
-archlinux-de-click-image:
+archlinux-de-flarum-click-image:
   forum:
-    load: 'Load image from {domain}'
-    error: 'Could not load image from {domain}'
+    load_button: 'Load image from {domain}'
+    error_message: 'Could not load image from {domain}'

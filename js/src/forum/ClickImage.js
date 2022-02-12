@@ -42,8 +42,8 @@ export default class ClickImage extends HTMLElement {
   _createPlaceholder(hostname) {
     const div = document.createElement('div');
     div.innerHTML = `
-        <span class="placeholder-message">${app.translator.trans('load', { domain: hostname })}</span>
-        <span class="error-message">${app.translator.trans('error', { domain: hostname })}</span>
+        <span class="placeholder-message">${app.translator.trans('archlinux-de-flarum-click-image.forum.load_button', { domain: hostname }).join('')}</span>
+        <span class="error-message">${app.translator.trans('archlinux-de-flarum-click-image.forum.error_message', { domain: hostname }).join('')}</span>
       `;
     return div;
   }
