@@ -11,9 +11,10 @@
     "scripts": {
         "dev": "webpack --mode development --watch",
         "build": "webpack --mode production",
-        "analyze": "cross-env ANALYZER=true yarn build",
+        "analyze": "cross-env ANALYZER=true yarn run build",
         "format": "prettier --write src",
         "format-check": "prettier --check src"
     },
-    "prettier": "@flarum/prettier-config"
+    "prettier": "@flarum/prettier-config",
+    "version": "0.0.0"
 }
