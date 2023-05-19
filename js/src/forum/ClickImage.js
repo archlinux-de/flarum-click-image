@@ -9,7 +9,8 @@ export default class ClickImage extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.appendChild(this._createStyle());
     try {
-      const hostname = new URL(this.getAttribute('src')).hostname;
+      const src = this.getAttribute('src');
+      const hostname = src.startsWith('/') ? window.location.hostname : new URL(src).hostname;
       const placeHolder = this._createPlaceholder(hostname);
 
       placeHolder.addEventListener(
