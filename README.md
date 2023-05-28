@@ -11,13 +11,13 @@ is loaded without user permissions.
 Install with composer:
 
 ```sh
-composer require archlinux-de/click-image:"*"
+composer require archlinux-de/flarum-click-image:"*"
 ```
 
 ## Updating
 
 ```sh
-composer update archlinux-de/click-image:"*"
+composer update archlinux-de/flarum-click-image:"*"
 php flarum cache:clear
 ```
 
