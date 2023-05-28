@@ -7,18 +7,18 @@ export default class ClickImage extends HTMLElement {
   }
 
   connectedCallback() {
-    this.shadowRoot.appendChild(this._createStyle());
+    this.shadowRoot.appendChild(this.#createStyle());
     try {
       const src = this.getAttribute('src');
       const hostname = src.startsWith('/') ? window.location.hostname : new URL(src).hostname;
-      const placeHolder = this._createPlaceholder(hostname);
+      const placeHolder = this.#createPlaceholder(hostname);
 
       placeHolder.addEventListener(
         'click',
         (event) => {
           placeHolder.classList.add('loading');
           event.preventDefault();
-          const img = this._createImg();
+          const img = this.#createImg();
           img.onerror = () => {
             placeHolder.classList.remove('loading');
             placeHolder.classList.add('error');
@@ -34,13 +34,13 @@ export default class ClickImage extends HTMLElement {
       );
       this.shadowRoot.appendChild(placeHolder);
     } catch (e) {
-      const placeHolder = this._createPlaceholder(this.getAttribute('src'));
+      const placeHolder = this.#createPlaceholder(this.getAttribute('src'));
       placeHolder.classList.add('error');
       this.shadowRoot.appendChild(placeHolder);
     }
   }
 
-  _createPlaceholder(hostname) {
+  #createPlaceholder(hostname) {
     const div = document.createElement('div');
     div.innerHTML = `
         <span class="placeholder-message">${app.translator
@@ -53,7 +53,7 @@ export default class ClickImage extends HTMLElement {
     return div;
   }
 
-  _createStyle() {
+  #createStyle() {
     const style = document.createElement('style');
     style.innerHTML = `
         :host {
@@ -113,7 +113,7 @@ export default class ClickImage extends HTMLElement {
     return style;
   }
 
-  _createImg() {
+  #createImg() {
     const img = document.createElement('img');
     if (this.getAttribute('height') > 0) {
       img.height = this.getAttribute('height');
