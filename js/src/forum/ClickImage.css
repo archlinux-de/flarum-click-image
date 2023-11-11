@@ -17,7 +17,9 @@ div {
   align-items: center;
   background-color: var(--background-color);
   cursor: pointer;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition:
+    width 0.2s ease-in-out,
+    height 0.2s ease-in-out;
 }
 
 span {
