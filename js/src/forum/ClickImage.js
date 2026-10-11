@@ -1,5 +1,5 @@
 import app from 'flarum/forum/app';
-import styles from '!!raw-loader!./ClickImage.css';
+import styles from './ClickImage.css';
 
 export default class ClickImage extends HTMLElement {
   constructor() {
