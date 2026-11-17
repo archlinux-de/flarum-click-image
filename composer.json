@@ -7,6 +7,9 @@
         "php": "^8.3",
         "flarum/core": "^2.0.0"
     },
+    "conflict": {
+        "s9e/sweetdom": "<2.1.2"
+    },
     "extra": {
         "flarum-extension": {
             "title": "Click-Image",
